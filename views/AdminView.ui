@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminView</class>
+ <widget class="QMainWindow" name="AdminView">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>940</width><height>600</height></rect>
+  </property>
+  <property name="windowTitle"><string>Кафе - Адміністратор</string></property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin"><number>6</number></property>
+    <property name="topMargin"><number>6</number></property>
+    <property name="rightMargin"><number>6</number></property>
+    <property name="bottomMargin"><number>6</number></property>
+    <property name="spacing"><number>0</number></property>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex"><number>0</number></property>
+      <widget class="QWidget" name="reservationsContainer">
+       <attribute name="title"><string>Бронювання</string></attribute>
+      </widget>
+      <widget class="QWidget" name="tablesContainer">
+       <attribute name="title"><string>Столики</string></attribute>
+      </widget>
+      <widget class="QWidget" name="usersTab">
+       <attribute name="title"><string>Користувачі</string></attribute>
+       <layout class="QVBoxLayout" name="usersLayout">
+        <property name="leftMargin"><number>10</number></property>
+        <property name="topMargin"><number>8</number></property>
+        <property name="rightMargin"><number>10</number></property>
+        <property name="bottomMargin"><number>8</number></property>
+        <item>
+         <widget class="QTableWidget" name="usersTable">
+          <property name="columnCount"><number>3</number></property>
+          <property name="rowCount"><number>0</number></property>
+          <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
+          <property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property>
+          <property name="alternatingRowColors"><bool>true</bool></property>
+          <attribute name="horizontalHeaderStretchLastSection"><bool>true</bool></attribute>
+          <attribute name="verticalHeaderVisible"><bool>false</bool></attribute>
+          <column><property name="text"><string>ID</string></property></column>
+          <column><property name="text"><string>Логін</string></property></column>
+          <column><property name="text"><string>Роль</string></property></column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect><x>0</x><y>0</y><width>940</width><height>22</height></rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title"><string>Файл</string></property>
+    <addaction name="actionLogout"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <action name="actionLogout">
+   <property name="text"><string>Вийти</string></property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

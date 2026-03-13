@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReservationDialog</class>
+ <widget class="QDialog" name="ReservationDialog">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>400</width><height>320</height></rect>
+  </property>
+  <property name="windowTitle"><string>Бронювання столика</string></property>
+  <property name="sizeGripEnabled"><bool>false</bool></property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin"><number>20</number></property>
+   <property name="topMargin"><number>16</number></property>
+   <property name="rightMargin"><number>20</number></property>
+   <property name="bottomMargin"><number>16</number></property>
+   <property name="spacing"><number>8</number></property>
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <property name="fieldGrowthPolicy"><enum>QFormLayout::ExpandingFieldsGrow</enum></property>
+     <property name="verticalSpacing"><number>8</number></property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_date">
+       <property name="text"><string>Дата:</string></property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QDateEdit" name="dateEdit">
+       <property name="calendarPopup"><bool>true</bool></property>
+       <property name="displayFormat"><string>dd.MM.yyyy</string></property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_start">
+       <property name="text"><string>Початок:</string></property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QTimeEdit" name="startEdit">
+       <property name="displayFormat"><string>HH:mm</string></property>
+       <property name="time"><time><hour>12</hour><minute>0</minute><second>0</second></time></property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_end">
+       <property name="text"><string>Кінець:</string></property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QTimeEdit" name="endEdit">
+       <property name="displayFormat"><string>HH:mm</string></property>
+       <property name="time"><time><hour>13</hour><minute>0</minute><second>0</second></time></property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_guests">
+       <property name="text"><string>Гостей:</string></property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QSpinBox" name="guestSpin">
+       <property name="minimum"><number>1</number></property>
+       <property name="maximum"><number>20</number></property>
+       <property name="value"><number>2</number></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="searchBtn">
+     <property name="text"><string>Знайти вільні столики</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="tableLabel">
+     <property name="text"><string>Столик:</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="tableCombo">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch><verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="infoLabel">
+     <property name="text"><string/></property>
+     <property name="wordWrap"><bool>true</bool></property>
+     <property name="styleSheet"><string>color: #888888; font-size: 10px;</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender><signal>accepted()</signal>
+   <receiver>ReservationDialog</receiver><slot>accept()</slot>
+   <hints><hint type="sourcelabel"><x>200</x><y>300</y></hint>
+         <hint type="destinationlabel"><x>200</x><y>160</y></hint></hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender><signal>rejected()</signal>
+   <receiver>ReservationDialog</receiver><slot>reject()</slot>
+   <hints><hint type="sourcelabel"><x>200</x><y>300</y></hint>
+         <hint type="destinationlabel"><x>200</x><y>160</y></hint></hints>
+  </connection>
+ </connections>
+</ui>
